@@ -34,7 +34,7 @@ public class StorageTests : IDisposable
         var store = new SettingsStore(Path.Combine(_dir, "sub", "settings.json"));
         var s = new AppSettings
         {
-            DateFormat = "yyMMdd", CompanyName = "오르카", UserName = "최경태", SelectedMode = 3,
+            DateFormat = "yyMMdd", CompanyName = "오르카", UserName = "최경태", Theme = AppTheme.Dark, SelectedMode = 3,
             Template = "{날짜}_{파일명}", UseRegex = true, CaseStyle = CaseStyle.TitleCase,
             SequenceBaseName = "보고서", SequenceStart = 5, SequenceDigits = 3, SequenceSeparator = SequenceSeparator.Hyphen,
         };
@@ -49,5 +49,15 @@ public class StorageTests : IDisposable
         Assert.Equal(new AppSettings(), new SettingsStore(path).Load());
         File.WriteAllText(path, "{ not json");
         Assert.Equal(new AppSettings(), new SettingsStore(path).Load());
+    }
+
+    [Fact]
+    public void Settings_UnknownTheme_FallsBackToLight()
+    {
+        string path = Path.Combine(_dir, "settings.json");
+        File.WriteAllText(path, "{ \"Theme\": 7, \"CompanyName\": \"오르카\" }");
+        var s = new SettingsStore(path).Load();
+        Assert.Equal(AppTheme.Light, s.Theme);
+        Assert.Equal("오르카", s.CompanyName);
     }
 }
