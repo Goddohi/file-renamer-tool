@@ -30,7 +30,11 @@ public sealed class MainViewModel : INotifyPropertyChanged
     private int _seqDigits = 1;
     private int _seqSepIndex;
     private string _errorMessage = "";
-    private string _summary = "";
+    private int _changedCount;
+    private int _unchangedCount;
+    private int _conflictCount;
+    private string _conflictMessage = "";
+    private string _applyText = "적용";
 
     public MainViewModel()
     {
@@ -49,13 +53,14 @@ public sealed class MainViewModel : INotifyPropertyChanged
         Rows.CollectionChanged += (_, _) =>
         {
             Notify(nameof(HasNoRows));
+            Notify(nameof(HasRows));
             Refresh();
         };
 
         RemoveSelectedCommand = new RelayCommand(p => RemoveSelected(p as IList), p => p is IList { Count: > 0 });
         ClearCommand = new RelayCommand(_ => Rows.Clear(), _ => Rows.Count > 0);
-        MoveUpCommand = new RelayCommand(p => Move(p as FileRow, -1), p => p is FileRow);
-        MoveDownCommand = new RelayCommand(p => Move(p as FileRow, +1), p => p is FileRow);
+        MoveUpCommand = new RelayCommand(p => Move(p as FileRow, -1), p => CanMove(p as FileRow, -1));
+        MoveDownCommand = new RelayCommand(p => Move(p as FileRow, +1), p => CanMove(p as FileRow, +1));
         ApplyCommand = new RelayCommand(_ => Apply(), _ => CanApply);
         UndoCommand = new RelayCommand(_ => Undo(), _ => _lastResult is { Succeeded.Count: > 0 });
 
@@ -67,6 +72,13 @@ public sealed class MainViewModel : INotifyPropertyChanged
 
     public ObservableCollection<FileRow> Rows { get; } = [];
     public bool HasNoRows => Rows.Count == 0;
+    public bool HasRows => Rows.Count > 0;
+    public bool HasError => _errorMessage.Length > 0;
+    public bool HasConflictMessage => _conflictMessage.Length > 0;
+    public string DateSample => FormatDateSample();
+    public string CompanyName => _settings.CompanyName;
+    public string UserName => _settings.UserName;
+    public string ThemeName => _settings.Theme == AppTheme.Dark ? "다크 모드" : "일반 모드";
     public bool CanApply => _plan != null && RenamePlanner.CanApply(_plan);
     public AppSettings Settings => _settings;
 
@@ -77,19 +89,29 @@ public sealed class MainViewModel : INotifyPropertyChanged
     public ICommand ApplyCommand { get; }
     public ICommand UndoCommand { get; }
 
-    public int ModeIndex { get => _modeIndex; set => SetInput(ref _modeIndex, value); }
+    public int ModeIndex { get => _modeIndex; set => SetInput(ref _modeIndex, Math.Clamp(value, 0, 3)); }
     public string ReplaceFind { get => _replaceFind; set => SetInput(ref _replaceFind, value); }
     public string ReplaceWith { get => _replaceWith; set => SetInput(ref _replaceWith, value); }
     public bool UseRegex { get => _useRegex; set => SetInput(ref _useRegex, value); }
     public string Template { get => _template; set => SetInput(ref _template, value); }
-    public int CaseIndex { get => _caseIndex; set => SetInput(ref _caseIndex, value); }
+    public int CaseIndex { get => _caseIndex; set => SetInput(ref _caseIndex, Math.Clamp(value, 0, 3)); }
     public string SeqBaseName { get => _seqBaseName; set => SetInput(ref _seqBaseName, value); }
     public int SeqStart { get => _seqStart; set => SetInput(ref _seqStart, Math.Clamp(value, 0, 999_999_999)); }
     public int SeqDigits { get => _seqDigits; set => SetInput(ref _seqDigits, Math.Clamp(value, 0, 10)); }
-    public int SeqSepIndex { get => _seqSepIndex; set => SetInput(ref _seqSepIndex, value); }
+    public int SeqSepIndex { get => _seqSepIndex; set => SetInput(ref _seqSepIndex, Math.Clamp(value, 0, 3)); }
 
-    public string ErrorMessage { get => _errorMessage; private set { if (_errorMessage != value) { _errorMessage = value; Notify(); } } }
-    public string Summary { get => _summary; private set { if (_summary != value) { _summary = value; Notify(); } } }
+    public string ErrorMessage { get => _errorMessage; private set { if (_errorMessage != value) { _errorMessage = value; Notify(); Notify(nameof(HasError)); } } }
+    public int ChangedCount { get => _changedCount; private set { if (_changedCount != value) { _changedCount = value; Notify(); } } }
+    public int UnchangedCount { get => _unchangedCount; private set { if (_unchangedCount != value) { _unchangedCount = value; Notify(); } } }
+    public int ConflictCount { get => _conflictCount; private set { if (_conflictCount != value) { _conflictCount = value; Notify(); } } }
+    public string ConflictMessage { get => _conflictMessage; private set { if (_conflictMessage != value) { _conflictMessage = value; Notify(); Notify(nameof(HasConflictMessage)); } } }
+    public string ApplyText { get => _applyText; private set { if (_applyText != value) { _applyText = value; Notify(); } } }
+
+    private string FormatDateSample()
+    {
+        try { return DateTime.Today.ToString(_settings.DateFormat, System.Globalization.CultureInfo.InvariantCulture); }
+        catch (FormatException) { return ""; }
+    }
 
     public void AddPaths(IEnumerable<string> dropped)
     {
@@ -111,16 +133,32 @@ public sealed class MainViewModel : INotifyPropertyChanged
             DateFormat = updated.DateFormat,
             CompanyName = updated.CompanyName,
             UserName = updated.UserName,
+            Theme = updated.Theme,
         };
+        App.ApplyTheme(_settings.Theme);
+        Notify(nameof(Settings));
+        Notify(nameof(DateSample));
+        Notify(nameof(CompanyName));
+        Notify(nameof(UserName));
+        Notify(nameof(ThemeName));
         Refresh();
-        SaveSettings();
+        SaveSettings(warnOnFailure: true);
     }
 
-    public void SaveSettings()
+    public void SaveSettings() => SaveSettings(warnOnFailure: false);
+
+    private void SaveSettings(bool warnOnFailure)
     {
         _settings = BuildSettings();
+        Notify(nameof(Settings));
         try { _store.Save(_settings); }
-        catch (Exception) { /* 설정 저장 실패는 무시 */ }
+        catch (Exception ex)
+        {
+            if (warnOnFailure)
+                MessageBox.Show(
+                    $"설정을 저장하지 못했습니다: {ex.Message}\n바뀐 설정은 이번 실행에만 적용됩니다.",
+                    "설정 저장 실패", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 
     private AppSettings BuildSettings() => _settings with
@@ -152,35 +190,60 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             _plan = RenamePlanner.Build(Rows.Select(r => r.Path).ToList(), CreateMode(), p => File.Exists(p) || Directory.Exists(p));
             ErrorMessage = "";
+            string? firstConflict = null;
+            int changed = 0, unchanged = 0, conflicts = 0;
             for (int i = 0; i < Rows.Count; i++)
             {
                 var item = _plan[i];
                 var row = Rows[i];
+                row.Index = i + 1;
                 row.NewName = item.NewName;
-                row.IsConflict = item.Status is PlanStatus.DuplicateInBatch or PlanStatus.ExistsOnDisk or PlanStatus.InvalidName;
-                row.StatusText = item.Status switch
+                (row.Kind, row.StatusText) = item.Status switch
                 {
-                    PlanStatus.Ok => "변경",
-                    PlanStatus.Unchanged => "변경 없음",
-                    PlanStatus.DuplicateInBatch => "이름 중복",
-                    PlanStatus.ExistsOnDisk => "이미 존재하는 파일",
-                    _ => "잘못된 이름",
+                    PlanStatus.Ok => (RowKind.Changed, "변경"),
+                    PlanStatus.Unchanged => (RowKind.Unchanged, "그대로"),
+                    PlanStatus.DuplicateInBatch => (RowKind.Conflict, "이름 중복"),
+                    PlanStatus.ExistsOnDisk => (RowKind.Conflict, "이미 있는 이름"),
+                    _ => (RowKind.Conflict, "잘못된 이름"),
                 };
+                (row.OldSegments, row.NewSegments) = NameDiff.Compute(row.CurrentName, item.NewName);
+                switch (row.Kind)
+                {
+                    case RowKind.Changed: changed++; break;
+                    case RowKind.Unchanged: unchanged++; break;
+                    default:
+                        conflicts++;
+                        firstConflict ??= $"{item.NewName} — " + (item.Status switch
+                        {
+                            PlanStatus.DuplicateInBatch => "이번에 바꾸는 파일 중에 같은 이름이 있습니다",
+                            PlanStatus.ExistsOnDisk => "같은 폴더에 같은 이름의 파일이 있습니다",
+                            _ => "사용할 수 없는 이름입니다",
+                        });
+                        break;
+                }
             }
-            int ok = _plan.Count(p => p.Status == PlanStatus.Ok);
-            int bad = _plan.Count(p => p.Status is PlanStatus.DuplicateInBatch or PlanStatus.ExistsOnDisk or PlanStatus.InvalidName);
-            Summary = Rows.Count == 0 ? "" : $"전체 {Rows.Count}개 / 변경 {ok}개" + (bad > 0 ? $" / 충돌 {bad}개" : "");
+            ChangedCount = changed;
+            UnchangedCount = unchanged;
+            ConflictCount = conflicts;
+            ConflictMessage = firstConflict == null ? "" : firstConflict + (conflicts > 1 ? $" 외 {conflicts - 1}건" : "");
+            ApplyText = changed > 0 ? $"{changed}개 이름 바꾸기" : "적용";
         }
         catch (Exception ex)
         {
             _plan = null;
             ErrorMessage = ex is RenameRuleException ? ex.Message : "처리 중 오류: " + ex.Message;
-            Summary = "";
-            foreach (var row in Rows)
+            ChangedCount = UnchangedCount = ConflictCount = 0;
+            ConflictMessage = "";
+            ApplyText = "적용";
+            for (int i = 0; i < Rows.Count; i++)
             {
+                var row = Rows[i];
+                row.Index = i + 1;
                 row.NewName = "";
                 row.StatusText = "";
-                row.IsConflict = false;
+                row.Kind = RowKind.None;
+                row.OldSegments = [new DiffSegment(row.CurrentName, DiffKind.Same)];
+                row.NewSegments = [];
             }
         }
         Notify(nameof(CanApply));
@@ -198,6 +261,13 @@ public sealed class MainViewModel : INotifyPropertyChanged
         if (row == null) return;
         int i = Rows.IndexOf(row);
         MoveRow(i, i + delta);
+    }
+
+    private bool CanMove(FileRow? row, int delta)
+    {
+        if (row == null) return false;
+        int index = Rows.IndexOf(row);
+        return index >= 0 && index + delta >= 0 && index + delta < Rows.Count;
     }
 
     private void Apply()

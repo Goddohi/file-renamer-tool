@@ -8,6 +8,7 @@ namespace FileRenamer.App;
 public partial class SettingsWindow : Window
 {
     private readonly AppSettings _original;
+    private bool _initializing = true;
 
     public SettingsWindow(AppSettings current)
     {
@@ -17,26 +18,33 @@ public partial class SettingsWindow : Window
         DateFormatBox.Text = current.DateFormat;
         CompanyBox.Text = current.CompanyName;
         UserBox.Text = current.UserName;
+        (current.Theme == AppTheme.Dark ? DarkThemeRadio : LightThemeRadio).IsChecked = true;
+        _initializing = false;
         UpdateSample();
     }
 
+    private void OnSourceInitialized(object? sender, EventArgs e) => App.ApplyTitleBar(this);
+
     public AppSettings Result { get; private set; }
 
-    private void OnDateFormatChanged(object sender, TextChangedEventArgs e) => UpdateSample();
+    private void OnDateFormatChanged(object sender, TextChangedEventArgs e)
+    {
+        if (!_initializing) UpdateSample();
+    }
 
     private bool UpdateSample()
     {
         try
         {
-            SampleText.Text = "미리보기: " + DateTime.Today.ToString(DateFormatBox.Text, CultureInfo.InvariantCulture);
-            SampleText.Foreground = System.Windows.Media.Brushes.Black;
+            SampleText.Text = "오늘 → " + DateTime.Today.ToString(DateFormatBox.Text, CultureInfo.InvariantCulture);
+            SampleText.SetResourceReference(TextBlock.ForegroundProperty, "TextBrush");
             OkButton.IsEnabled = true;
             return true;
         }
         catch (FormatException)
         {
             SampleText.Text = "날짜 형식이 올바르지 않습니다.";
-            SampleText.Foreground = System.Windows.Media.Brushes.Firebrick;
+            SampleText.SetResourceReference(TextBlock.ForegroundProperty, "BadFgBrush");
             OkButton.IsEnabled = false;
             return false;
         }
@@ -50,6 +58,7 @@ public partial class SettingsWindow : Window
             DateFormat = DateFormatBox.Text,
             CompanyName = CompanyBox.Text,
             UserName = UserBox.Text,
+            Theme = DarkThemeRadio.IsChecked == true ? AppTheme.Dark : AppTheme.Light,
         };
         DialogResult = true;
     }

@@ -1,14 +1,20 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using FileRenamer.Core;
 
 namespace FileRenamer.App;
+
+public enum RowKind { None, Changed, Unchanged, Conflict }
 
 public sealed class FileRow : INotifyPropertyChanged
 {
     private string _path;
+    private int _index;
     private string _newName = "";
     private string _statusText = "";
-    private bool _isConflict;
+    private RowKind _kind;
+    private IReadOnlyList<DiffSegment> _oldSegments = [];
+    private IReadOnlyList<DiffSegment> _newSegments = [];
 
     public FileRow(string path) => _path = path;
 
@@ -23,14 +29,31 @@ public sealed class FileRow : INotifyPropertyChanged
             _path = value;
             Notify();
             Notify(nameof(CurrentName));
+            Notify(nameof(FileNameStem));
+            Notify(nameof(Folder));
         }
     }
 
     public string CurrentName => System.IO.Path.GetFileName(_path);
+    public string FileNameStem => FileNameSplitter.Split(CurrentName).Stem;
+    public string Folder => System.IO.Path.GetDirectoryName(_path) ?? "";
 
+    public int Index { get => _index; set => Set(ref _index, value); }
     public string NewName { get => _newName; set => Set(ref _newName, value); }
     public string StatusText { get => _statusText; set => Set(ref _statusText, value); }
-    public bool IsConflict { get => _isConflict; set => Set(ref _isConflict, value); }
+    public RowKind Kind
+    {
+        get => _kind;
+        set
+        {
+            if (_kind == value) return;
+            Set(ref _kind, value);
+            Notify(nameof(IsConflict));
+        }
+    }
+    public bool IsConflict => _kind == RowKind.Conflict;
+    public IReadOnlyList<DiffSegment> OldSegments { get => _oldSegments; set => Set(ref _oldSegments, value); }
+    public IReadOnlyList<DiffSegment> NewSegments { get => _newSegments; set => Set(ref _newSegments, value); }
 
     private void Set<T>(ref T field, T value, [CallerMemberName] string? name = null)
     {

@@ -19,6 +19,18 @@ public partial class MainWindow : Window
         DataContext = _vm;
     }
 
+    private void OnSourceInitialized(object? sender, EventArgs e) => App.ApplyTitleBar(this);
+
+    private void OnInsertVariable(object sender, RoutedEventArgs e)
+    {
+        if (sender is not FrameworkElement { Tag: string text }) return;
+        int insertionIndex = TemplateBox.SelectionStart;
+        TemplateBox.SelectedText = text;
+        TemplateBox.Select(insertionIndex + text.Length, 0);
+        TemplateBox.GetBindingExpression(TextBox.TextProperty)?.UpdateSource();
+        TemplateBox.Focus();
+    }
+
     private void OnAddFiles(object sender, RoutedEventArgs e)
     {
         var dlg = new OpenFileDialog { Multiselect = true, Title = "이름을 바꿀 파일 선택" };
@@ -35,8 +47,9 @@ public partial class MainWindow : Window
 
     private void OnDragOver(object sender, DragEventArgs e)
     {
-        if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effects = DragDropEffects.Copy;
-        else if (e.Data.GetDataPresent(RowFormat)) e.Effects = DragDropEffects.Move;
+        if (e.Data.GetDataPresent(RowFormat) && e.Data.GetData(RowFormat) is FileRow row && _vm.Rows.Contains(row))
+            e.Effects = e.AllowedEffects & DragDropEffects.Move;
+        else if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effects = e.AllowedEffects & DragDropEffects.Copy;
         else e.Effects = DragDropEffects.None;
         e.Handled = true;
     }
@@ -44,7 +57,7 @@ public partial class MainWindow : Window
     private void OnDrop(object sender, DragEventArgs e)
     {
         e.Handled = true;
-        if (e.Data.GetDataPresent(RowFormat) && e.Data.GetData(RowFormat) is FileRow row)
+        if (e.Data.GetDataPresent(RowFormat) && e.Data.GetData(RowFormat) is FileRow row && _vm.Rows.Contains(row))
         {
             var target = FindRow(e.OriginalSource as DependencyObject);
             int to = target != null ? _vm.Rows.IndexOf(target.Item as FileRow ?? row) : _vm.Rows.Count - 1;
@@ -64,7 +77,8 @@ public partial class MainWindow : Window
 
     private void OnGridMouseMove(object sender, MouseEventArgs e)
     {
-        if (e.LeftButton != MouseButtonState.Pressed || _dragRow == null) return;
+        if (e.LeftButton != MouseButtonState.Pressed) { _dragRow = null; return; }
+        if (_dragRow == null) return;
         var pos = e.GetPosition(null);
         if (Math.Abs(pos.X - _dragStart.X) < SystemParameters.MinimumHorizontalDragDistance &&
             Math.Abs(pos.Y - _dragStart.Y) < SystemParameters.MinimumVerticalDragDistance) return;
@@ -77,7 +91,12 @@ public partial class MainWindow : Window
     private static DataGridRow? FindRow(DependencyObject? d)
     {
         while (d != null && d is not DataGridRow)
-            d = d is Visual or System.Windows.Media.Media3D.Visual3D ? VisualTreeHelper.GetParent(d) : LogicalTreeHelper.GetParent(d);
+            d = d switch
+            {
+                Visual or System.Windows.Media.Media3D.Visual3D => VisualTreeHelper.GetParent(d),
+                FrameworkContentElement content => content.Parent,
+                _ => LogicalTreeHelper.GetParent(d),
+            };
         return d as DataGridRow;
     }
 }
