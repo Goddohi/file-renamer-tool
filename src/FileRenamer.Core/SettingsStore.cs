@@ -35,6 +35,7 @@ public sealed class SettingsStore(string path)
             DateFormat = string.IsNullOrEmpty(s.DateFormat) ? d.DateFormat : s.DateFormat,
             CompanyName = s.CompanyName ?? d.CompanyName,
             UserName = s.UserName ?? d.UserName,
+            Theme = Enum.IsDefined(s.Theme) ? s.Theme : d.Theme,
             SelectedMode = s.SelectedMode is >= 0 and <= 3 ? s.SelectedMode : d.SelectedMode,
             ReplaceFind = s.ReplaceFind ?? d.ReplaceFind,
             ReplaceWith = s.ReplaceWith ?? d.ReplaceWith,

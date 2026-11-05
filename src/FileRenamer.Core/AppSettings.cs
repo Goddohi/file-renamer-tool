@@ -4,11 +4,14 @@ public enum CaseStyle { Lower, Upper, FirstUpper, TitleCase }
 
 public enum SequenceSeparator { Space, Underscore, Hyphen, None }
 
+public enum AppTheme { Light, Dark }
+
 public sealed record AppSettings
 {
     public string DateFormat { get; init; } = "yyyyMMdd";
     public string CompanyName { get; init; } = "";
     public string UserName { get; init; } = "";
+    public AppTheme Theme { get; init; } = AppTheme.Light;
 
     // Last-used inputs. SelectedMode: 0=replace, 1=template, 2=case, 3=sequence
     public int SelectedMode { get; init; } = 0;
