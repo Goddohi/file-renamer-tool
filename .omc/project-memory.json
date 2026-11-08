@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1794141808422,
+  "projectRoot": "C:\\Users\\최경태\\orca\\workspaces\\file-renamer-tool\\develop-2",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "src",
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "publish": {
+      "path": "publish",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1794141808341,
+      "keyFiles": [
+        "FileRenamer.App.exe",
+        "FileRenamer.App.pdb",
+        "FileRenamer.Core.pdb"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1794141808341,
+      "keyFiles": []
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1794141808342,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}
