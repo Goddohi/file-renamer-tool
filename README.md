@@ -1,4 +1,4 @@
-# 파일 이름 일괄 변경 (File Renamer)
+# File Renamer
 
 Windows용 파일 이름 일괄 변경 데스크톱 앱 (C# / WPF / .NET 8). 설치 없이 실행되는 단일 exe로 배포할 수 있습니다.
 
