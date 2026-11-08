@@ -7,10 +7,14 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>FileRenamer.App</RootNamespace>
     <AssemblyName>FileRenamer.App</AssemblyName>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Product>File Renamer</Product>
+    <AssemblyTitle>File Renamer</AssemblyTitle>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
   <ItemGroup>
+    <Resource Include="Assets\app.ico" />
     <ProjectReference Include="..\FileRenamer.Core\FileRenamer.Core.csproj" />
   </ItemGroup>
 </Project>

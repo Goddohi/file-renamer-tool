@@ -54,6 +54,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             Notify(nameof(HasNoRows));
             Notify(nameof(HasRows));
+            Notify(nameof(FirstRowStem));
             Refresh();
         };
 
@@ -73,6 +74,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
     public ObservableCollection<FileRow> Rows { get; } = [];
     public bool HasNoRows => Rows.Count == 0;
     public bool HasRows => Rows.Count > 0;
+    public string? FirstRowStem => Rows.FirstOrDefault()?.FileNameStem;
     public bool HasError => _errorMessage.Length > 0;
     public bool HasConflictMessage => _conflictMessage.Length > 0;
     public string DateSample => FormatDateSample();
@@ -246,6 +248,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
                 row.NewSegments = [];
             }
         }
+        Notify(nameof(FirstRowStem));
         Notify(nameof(CanApply));
         CommandManager.InvalidateRequerySuggested();
     }
