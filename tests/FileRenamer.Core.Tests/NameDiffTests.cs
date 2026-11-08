@@ -24,6 +24,30 @@ public class NameDiffTests
         Assert.Equal(expectedNew, Show(n));
     }
 
+    [Theory]
+    [InlineData("을지대학원지원_학업계획서.hwp", "[+을지대학원지원_]학업계획서.hwp")]
+    [InlineData("을지대학원_학업계획서_최종.hwp", "[+을지대학원_]학업계획서[+_최종].hwp")]
+    public void AddedPrefixWithRepeatedCharacter_PreservesOriginalRuns(string newName, string expectedNew)
+    {
+        const string oldName = "학업계획서.hwp";
+        var (o, n) = NameDiff.Compute(oldName, newName);
+        Assert.DoesNotContain(o, s => s.Kind == DiffKind.Removed);
+        Assert.Equal(oldName, Show(o));
+        Assert.Equal(expectedNew, Show(n));
+    }
+
+    [Fact]
+    public void InsertionsWithLongerMisleadingSubstring_DoNotRemoveOriginalCharacters()
+    {
+        const string oldName = "aabbccdd.txt";
+        const string newName = "bbccddXaaYbbZccQdd.txt";
+        var (o, n) = NameDiff.Compute(oldName, newName);
+        Assert.DoesNotContain(o, s => s.Kind == DiffKind.Removed);
+        Assert.Equal(oldName, Show(o));
+        Assert.Equal("[+bbccddX]aa[+Y]bb[+Z]cc[+Q]dd.txt", Show(n));
+        Assert.Equal(newName, string.Concat(n.Select(s => s.Text)));
+    }
+
     [Fact]
     public void Unchanged_IsSingleSameSegment()
     {
