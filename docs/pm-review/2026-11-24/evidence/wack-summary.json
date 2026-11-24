@@ -1,0 +1,247 @@
+﻿{
+    "CheckedAt":  "2026-11-13T00:33:23.7610102+09:00",
+    "PackageFullName":  "Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16",
+    "ToolVersion":  "10.0.26100.9457",
+    "ExitCode":  0,
+    "OverallResult":  "WARNING",
+    "PartialRun":  "FALSE",
+    "WorkingDirectory":  "C:\\ProgramData\\FileRenamer\\Wack\\20261113-003056-f17ce17b",
+    "Tests":  [
+                  {
+                      "Name":  "서명된 드라이버 및 실행 파일 설치",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "사용자 계정 컨트롤 실행 수준",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "응용 프로그램 카운트",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "앱 매니페스트",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "파일 연결 동사",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "레지스트리 검사",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "Enterprise 기능",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "리소스 패키지",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "금지된 파일 분석",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "전용 코드 서명",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "앱 리소스",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "브랜딩",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "디버그 구성",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "특수 사용 기능",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "ExclusiveTo 특성",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "형식 위치",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "유형 이름 대/소문자 구분",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "유형 이름 수정",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "일반 메타데이터 수정",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "속성",
+                      "Optional":  false,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "압축 파일 사용량",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "차단된 실행 파일",
+                      "Optional":  true,
+                      "Result":  "FAIL",
+                      "Messages":  [
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\coreclr.dll에 API kernel32.dll!CreateProcessW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.CodeDom.dll에 API System.Diagnostics.Process.Start 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\PenImc_cor3.dll에 API shell32.dll!ShellExecuteExW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\PresentationUI.dll에 API System.Diagnostics.Process.Start 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\UIAutomationTypes.dll에 API shell32.dll!ShellExecuteA 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\UIAutomationTypes.dll에 API shell32.dll!ShellExecuteEx 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\Microsoft.VisualBasic.Forms.dll에 API kernel32.dll!CreateProcessA 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\PresentationFramework.dll에 API shell32.dll!ShellExecuteEx 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\FileRenamer.App.exe에 API shell32.dll!ShellExecuteW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\WindowsBase.dll에 API shell32.dll!ShellExecuteA 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\WindowsBase.dll에 API shell32.dll!ShellExecuteEx 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.Windows.Forms.dll에 API System.Diagnostics.Process.Start 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\mscordbi.dll에 API kernel32.dll!CreateProcessW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.Diagnostics.PerformanceCounter.dll에 API System.Diagnostics.Process.Start 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.Diagnostics.Process.dll에 API kernel32.dll!CreateProcessW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.Diagnostics.Process.dll에 API shell32.dll!ShellExecuteExW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\System.Windows.Forms.Primitives.dll에 API shell32.dll!ShellExecuteW 관련 \"시작 프로세스\"에 대한 참조가 포함됨",
+                                       "파일 clrjit.dll에 \"bash\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 coreclr.dll에 \"reG\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 D3DCompiler_47_cor3.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 D3DCompiler_47_cor3.dll에 \"Reg\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 Microsoft.DiaSymReader.Native.amd64.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 PresentationCore.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 PresentationFramework.dll에 \"rEg\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 PresentationFramework.dll에 \"dnx\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 PresentationFramework.dll에 \"CDb\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.CodeDom.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Linq.Expressions.dll에 \"rcsI\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Net.Sockets.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.CoreLib.dll에 \"rEg\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.CoreLib.dll에 \"Cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.CoreLib.dll에 \"MSBuild\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.CoreLib.dll에 \"dnX\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.Xml.dll에 \"reg\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.Xml.dll에 \"CsI\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Private.Xml.dll에 \"CdB\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Resources.Extensions.dll에 \"MSBuild\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Windows.Forms.Design.dll에 \"CDB\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Windows.Forms.Design.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Windows.Forms.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Windows.Forms.Primitives.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 UIAutomationClientSideProviders.dll에 \"cmd\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 UIAutomationTypes.dll에 \"cMD\"에 대한 차단된 실행 참조가 포함됩니다.",
+                                       "파일 System.Windows.Forms.resources.dll에 \"CSi\"에 대한 차단된 실행 참조가 포함됩니다."
+                                   ]
+                  },
+                  {
+                      "Name":  "플랫폼에 적절한 파일",
+                      "Optional":  true,
+                      "Result":  "PASS",
+                      "Messages":  [
+
+                                   ]
+                  },
+                  {
+                      "Name":  "DPIAwarenessValidation",
+                      "Optional":  false,
+                      "Result":  "WARNING",
+                      "Messages":  [
+                                       "이진 파일 C:\\Program Files\\WindowsApps\\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\\FileRenamer.App.exe을(를) 처리하지 못했습니다.",
+                                       "앱 Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16이(가) DPI를 인식하지 않습니다."
+                                   ]
+                  }
+              ]
+}

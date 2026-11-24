@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-10T07:40:31+09:00",
+  "releasePackage": "Dohi.FileRenamerDohi_1.0.0.0_x64.msix",
+  "releaseSha256": "92469a0981f5481431fa3f5b624fb7ebedd308ffad8507cae298c78f7165a2c3",
+  "signedTestSha256": "d5b47d3d47d977c3c3cf5fe3933df46e42cdc567b49fe23e4aa84d9e5182d1b3",
+  "installed": true,
+  "installedStatus": "Ok",
+  "packageFamilyName": "Dohi.FileRenamerDohi_0xzf0d7sark16",
+  "testCertificateTrusted": true,
+  "privateKeyPresent": false,
+  "cleanup": "Not completed: administrator elevation was canceled by the user",
+  "wackInstalled": false,
+  "wackExecuted": false,
+  "storeUpload": "Not performed in this session",
+  "storeSubmission": "Not performed in this session",
+  "gitChanges": "Packaging changes are uncommitted; source snapshot included"
+}

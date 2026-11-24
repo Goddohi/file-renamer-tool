@@ -1,0 +1,47 @@
+﻿File Renamer 패키징 재현 명령어
+기준: 2026-11-10 / Windows PowerShell / 저장소 루트에서 실행
+
+원래 작업 폴더:
+C:\Users\최경태\orca\file-renamer-tool
+
+1. 일반 PowerShell에서 작업 폴더 이동
+Set-Location -LiteralPath 'C:\Users\최경태\orca\file-renamer-tool'
+
+2. 기존 로직 테스트
+dotnet test FileRenamer.sln -c Release
+
+3. Store 제출용 x64 MSIX 생성
+dotnet msbuild packaging/FileRenamer.Package.proj /t:Build
+
+결과:
+artifacts\msix\Release\Dohi.FileRenamerDohi_1.0.0.0_x64.msix
+
+4. 다음 버전 생성 예시
+dotnet msbuild packaging/FileRenamer.Package.proj /t:Build /p:PackageVersion=1.0.1.0
+
+5. 테스트 서명본 새로 만들기 (기존 테스트 설치가 있으면 먼저 정리)
+powershell -NoProfile -ExecutionPolicy Bypass -File packaging/New-TestPackage.ps1
+
+6. 테스트 앱 설치 (관리자 PowerShell)
+powershell -NoProfile -ExecutionPolicy Bypass -File packaging/Install-TestPackage.ps1
+
+현재는 테스트 앱이 이미 설치되어 있습니다. 위 명령을 다시 실행할 필요가 없습니다.
+기존 설치를 덮어쓰지 않도록 스크립트가 중단하게 되어 있습니다.
+
+7. WACK 검사 (인증 키트 설치 후 관리자 PowerShell)
+powershell -NoProfile -ExecutionPolicy Bypass -File packaging/Test-Wack.ps1
+
+8. 테스트 후 앱 및 임시 인증서 신뢰 제거 (관리자 PowerShell)
+powershell -NoProfile -ExecutionPolicy Bypass -File packaging/Install-TestPackage.ps1 -Uninstall
+
+제거 명령은 원래 저장소에서 실행하세요. 설치 영수증은 원래 저장소의
+artifacts\msix\Test\installed.json에 있습니다.
+테스트 앱의 설정도 제거되므로 필요한 내용이 있으면 먼저 보관하세요.
+
+9. 기존 방식의 자체 포함 단일 EXE 새로 만들기
+dotnet publish src/FileRenamer.App -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -o publish
+
+소스 백업을 사용할 때:
+04_소스백업 폴더에 src, tests, packaging, FileRenamer.sln이 함께 있습니다.
+그 폴더로 이동해 2~4번 명령을 실행하면 됩니다. .NET SDK와 최초 NuGet 연결이 필요합니다.
+빌드 캐시, Git 이력, 개인 키는 백업에 넣지 않았습니다.

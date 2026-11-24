@@ -1,0 +1,33 @@
+﻿**********************
+Windows PowerShell 기록 시작
+시작 시간: 20261110015310
+사용자 이름: DESKTOP-JOKP432\최경태
+RunAs 사용자: DESKTOP-JOKP432\최경태
+구성 이름: 
+Machine: DESKTOP-JOKP432 (Microsoft Windows NT 10.0.26200.0)
+호스트 응용 프로그램: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\최경태\orca\file-renamer-tool\packaging\Install-TestPackage.ps1
+프로세스 ID: 19868
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+
+Name              : Dohi.FileRenamerDohi
+PackageFullName   : Dohi.FileRenamerDohi_1.0.0.0_x64__0xzf0d7sark16
+PackageFamilyName : Dohi.FileRenamerDohi_0xzf0d7sark16
+InstallLocation   : C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.0.0_x64__0xzf0d7sark16
+SignatureKind     : Developer
+Status            : Ok
+
+
+
+**********************
+Windows PowerShell 기록 끝
+종료 시간: 20261110015317
+**********************

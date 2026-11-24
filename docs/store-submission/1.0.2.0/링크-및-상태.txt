@@ -1,0 +1,21 @@
+준비 상태: 2026-11-18
+
+공개 페이지: 공개 배포 성공. 개인정보·지원 URL은 인증 없는 HTTP 요청에서 200 응답과 문의 이메일을 확인했습니다.
+개인정보 안내: https://file-renamer-dohi.poisedcarnation32.chatgpt.site/privacy/
+지원 안내: https://file-renamer-dohi.poisedcarnation32.chatgpt.site/support/
+웹사이트: https://file-renamer-dohi.poisedcarnation32.chatgpt.site/
+지원 이메일: kmam147@gmail.com
+Partner Center: https://partner.microsoft.com/dashboard
+
+Store 앱 업로드·심사 제출·공개: 아직 하지 않았음.
+
+직접 할 일:
+1. 처음부터-따라하기.html을 열고 1~6단계의 이유와 점검을 읽기.
+2. 무료/유료, 배포 국가, 심사 후 공개 시점 결정.
+3. 남은 화면 배율·끌어 놓기·설정 복원 등 실제 사용 점검.
+4. Partner Center에 본인 계정으로 로그인하고 7~9단계대로 입력.
+5. WACK 경고와 제출 옵션을 검토한 뒤 10단계에서 최종 제출.
+
+확인 범위: PNG 4장(1920×1032), 문서 6개 내부 링크·이미지·앵커 확인, 로컬 페이지 HTTP 200, 공개 배포 및 비인증 HTTP 응답 확인.
+검증 한계: 브라우저 연결 및 앱 승인 시간 초과로 안내 웹페이지의 시각적 레이아웃 검수는 하지 못함. 실제 앱 화면은 촬영 때 확인했음.
+앱 1.0.2.0의 WACK 전체 판정은 WARNING이며 완전 통과가 아님.

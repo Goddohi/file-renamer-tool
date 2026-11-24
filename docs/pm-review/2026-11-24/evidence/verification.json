@@ -1,0 +1,29 @@
+﻿{
+    "CheckedAt":  "2026-11-13T00:36:28.3188745+09:00",
+    "PackageFullName":  "Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16",
+    "ReleaseSha256":  "36C341C5887ED710C52D440CD47002684D12AADFF4699929493EF5E9EC0B83C9",
+    "SignedPackageSha256":  "04B3B2A89A9F41FF81D6579EA9FEE6D1109E5F0CFC80DABC6B5F65661ED691AB",
+    "OriginalPayloadEntriesVerified":  469,
+    "WackOverallResult":  "WARNING",
+    "WackPartialRun":  "FALSE",
+    "PassedTests":  22,
+    "RequiredWarnings":  1,
+    "RequiredFailures":  0,
+    "OptionalFailures":  1,
+    "Startup":  {
+                    "CheckedAt":  "2026-11-13T00:32:54.9764653+09:00",
+                    "PackageFullName":  "Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16",
+                    "InstalledStatus":  "Ok",
+                    "Launch":  "Passed: installed executable started and became responsive",
+                    "ProcessDpiAwareness":  2,
+                    "MainWindowPerMonitorV2":  true,
+                    "Scope":  "Startup and DPI state only; multi-monitor visual behavior was not tested."
+                },
+    "DpiAnalyzerEvidence":  {
+                                "ExeSha256":  "DAE38E41528B1E0F37E3D807885390A7694075B58085FC5AEDB6208F2AB1664F",
+                                "InstalledLocation":  "IsPerMonitorV2DPIAwarenessSet throws E_FAIL",
+                                "IdenticalCopyInWorkspace":  "True",
+                                "IdenticalCopyInPathWithSpaces":  "True"
+                            },
+    "StoreSubmission":  "Not uploaded or submitted"
+}

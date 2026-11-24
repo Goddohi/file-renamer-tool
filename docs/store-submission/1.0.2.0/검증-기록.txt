@@ -1,0 +1,14 @@
+2026-11-18 준비 자료 검증
+
+앱: 설치된 Dohi.FileRenamerDohi 1.0.2.0 x64
+창: Dohi.FileRenamerDohi_0xzf0d7sark16!App / File Renamer
+사진: 실제 창 캡처 4장, 1920×1032. 도구의 JPEG 원본을 픽셀 변경 없이 PNG로 인코딩. 리사이즈·합성·UI 추가 없음.
+데이터: C:\Users\Public\Documents\FileRenamer-Demo의 가상 txt 4개 표시. 원래 폴더에는 예시 6개 존재.
+미리보기: 찾아 바꾸기, 순번, 날짜 템플릿 확인. 동일한이름 템플릿에서 중복 4건과 적용 비활성화 확인.
+실행: 날짜 템플릿 적용 후 실제 파일명 변경 확인, 되돌리기 후 원래 이름과 모든 예시 파일 본문 일치 확인.
+미확인: 모든 배율, 모니터 이동, 끌어 놓기, 모든 모드의 실제 파일 변경, Store 심사 결과.
+
+제출용 MSIX SHA256 재확인:
+36C341C5887ED710C52D440CD47002684D12AADFF4699929493EF5E9EC0B83C9
+
+이전 WACK: 24개 중 22 PASS / 선택 1 FAIL / 필수 DPI 1 WARNING. 전체 WARNING. 재실행하지 않음.

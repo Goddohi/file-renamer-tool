@@ -1,0 +1,12 @@
+File Renamer_Dohi is a WPF desktop utility for batch-renaming user-selected local files. No sign-in is required.
+
+Test steps: launch the app, add disposable sample files, select Find and Replace, enter text present in the filenames and a replacement, review the preview, and apply. Verify the filenames in File Explorer. Undo restores the last rename operation within the current app session. Template, case conversion and sequence modes are also available. File extensions are preserved.
+
+The runFullTrust capability is used to run the desktop process for local file renaming, collision checks and undo. The application manifest specifies asInvoker. The app does not require administrator elevation for normal use.
+
+Local validation for package 1.0.2.0 (x64), WACK 10.0.26100.9457:
+The full run completed with OVERALL_RESULT=WARNING and PARTIAL_RUN=FALSE. 22 of 24 tests passed. The optional Blocked Executables test reported references in bundled .NET/WPF components and the app host. The DPI test reported an E_FAIL while inspecting the executable in the WindowsApps installation directory. The identical executable hash was recognized as PerMonitorV2 by the same binary analyzer after copying it to a normal directory. The installed application's main window was also verified at runtime as PerMonitorV2.
+
+Original reports and diagnostics have been retained. We are not claiming a clean WACK pass.
+
+Support: kmam147@gmail.com

@@ -1,6 +1,6 @@
 # File Renamer
 
-Windows용 파일 이름 일괄 변경 데스크톱 앱 (C# / WPF / .NET 8). 설치 없이 실행되는 단일 exe로 배포할 수 있습니다.
+Windows용 파일 이름 일괄 변경 데스크톱 앱 (C# / WPF / .NET 8). 설치 없이 실행되는 단일 exe 또는 Microsoft Store용 MSIX로 배포할 수 있습니다.
 
 ## 사용법
 
@@ -53,10 +53,28 @@ dotnet publish src/FileRenamer.App -c Release -r win-x64 --self-contained -p:Pub
 
 배포 결과는 `publish/FileRenamer.App.exe` 입니다.
 
+### Microsoft Store용 MSIX
+
+현재 제출 후보는 `artifacts/msix/Release/Dohi.FileRenamerDohi_1.0.2.0_x64.msix`입니다.
+실제 스크린샷과 단계별 이유를 담은 [Store 등록 따라 하기 가이드](docs/store-submission/1.0.2.0/처음부터-따라하기.html)와 [준비 자료 상태](docs/store-submission/1.0.2.0/링크-및-상태.txt)를 참고하세요.
+2026-11-13 전체 WACK 검사 결과는 **WARNING**이며, 남은 DPI 분석기 경고와 선택 검사 결과는 [패키징 안내](packaging/README.md)에 기록했습니다. Store 업로드 및 심사 제출은 아직 진행하지 않았습니다.
+
+Windows에서 다음 명령으로 런타임이 포함된 x64 MSIX를 만듭니다.
+
+```powershell
+dotnet msbuild packaging/FileRenamer.Package.proj /t:Build
+```
+
+결과는 `artifacts/msix/Release/Dohi.FileRenamerDohi_1.0.0.0_x64.msix`입니다.
+Store 제품 ID를 반영했으며 Windows SDK 빌드 도구는 최초 실행 시 NuGet에서 자동 복원합니다.
+서명하지 않은 Store 제출용 패키지이므로 더블클릭 설치에는 별도 서명과 인증서 신뢰 설정이 필요합니다.
+버전 변경, 로컬 설치 테스트, 제출 절차는 [패키징 안내](packaging/README.md)를 참고하세요.
+
 ## 구조
 
 ```
 src/FileRenamer.Core/          이름 계산, 충돌 검사, 실행/되돌리기, 설정 저장 (UI 의존 없음)
 src/FileRenamer.App/           WPF UI
 tests/FileRenamer.Core.Tests/  xUnit 단위 테스트
+packaging/                   MSIX 프로젝트, 매니페스트, 로고 및 빌드 스크립트
 ```

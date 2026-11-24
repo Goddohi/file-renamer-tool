@@ -1,0 +1,51 @@
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Process Launch API Detection List contains 11 APIs to scan for
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\coreclr.dll contains a reference to a "Launch Process" related API kernel32.dll!CreateProcessW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.CodeDom.dll contains a reference to a "Launch Process" related API System.Diagnostics.Process.Start
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\PenImc_cor3.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteExW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\PresentationUI.dll contains a reference to a "Launch Process" related API System.Diagnostics.Process.Start
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\UIAutomationTypes.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteA
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\UIAutomationTypes.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteEx
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\Microsoft.VisualBasic.Forms.dll contains a reference to a "Launch Process" related API kernel32.dll!CreateProcessA
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\PresentationFramework.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteEx
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\FileRenamer.App.exe contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\WindowsBase.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteA
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\WindowsBase.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteEx
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Windows.Forms.dll contains a reference to a "Launch Process" related API System.Diagnostics.Process.Start
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\mscordbi.dll contains a reference to a "Launch Process" related API kernel32.dll!CreateProcessW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Diagnostics.PerformanceCounter.dll contains a reference to a "Launch Process" related API System.Diagnostics.Process.Start
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Diagnostics.Process.dll contains a reference to a "Launch Process" related API kernel32.dll!CreateProcessW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Diagnostics.Process.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteExW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:File C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Windows.Forms.Primitives.dll contains a reference to a "Launch Process" related API shell32.dll!ShellExecuteW
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:[1] Binary Filter Expression=\b(?<=\\)?(?<![-#\[\]\{\}%`~!@$\^&*()+:;\<\>\.?/|])(cmd\.exe|powershell_ise\.exe|powershell\.exe|regedt32\.exe|reg\.exe|regedit\.exe|cdb\.exe|windbg\.exe|msbuild\.exe|csi\.exe|dnx\.exe|rcsi\.exe|ntsd\.exe|wscript\.exe|cscript\.exe|bash\.exe|kd\.exe|cmd|powershell_ise|powershell|regedt32|reg|regedit|cdb|windbg|msbuild|csi|dnx|rcsi|ntsd|wscript|cscript|bash)(?!\S)\b
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Excluded file extensions for detection contains 25 extensions to exclude
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Excluded files for detection contains 8 files to exclude
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File clrjit.dll contains a blocked executable reference to "bash"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File coreclr.dll contains a blocked executable reference to "reG"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File D3DCompiler_47_cor3.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File D3DCompiler_47_cor3.dll contains a blocked executable reference to "Reg"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File Microsoft.DiaSymReader.Native.amd64.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File PresentationCore.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File PresentationFramework.dll contains a blocked executable reference to "rEg"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File PresentationFramework.dll contains a blocked executable reference to "dnx"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File PresentationFramework.dll contains a blocked executable reference to "CDb"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.CodeDom.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Linq.Expressions.dll contains a blocked executable reference to "rcsI"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Net.Sockets.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.CoreLib.dll contains a blocked executable reference to "rEg"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.CoreLib.dll contains a blocked executable reference to "Cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.CoreLib.dll contains a blocked executable reference to "MSBuild"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.CoreLib.dll contains a blocked executable reference to "dnX"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.Xml.dll contains a blocked executable reference to "reg"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.Xml.dll contains a blocked executable reference to "CsI"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Private.Xml.dll contains a blocked executable reference to "CdB"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Resources.Extensions.dll contains a blocked executable reference to "MSBuild"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Windows.Forms.Design.dll contains a blocked executable reference to "CDB"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Windows.Forms.Design.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Windows.Forms.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Windows.Forms.Primitives.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File UIAutomationClientSideProviders.dll contains a blocked executable reference to "cmd"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File UIAutomationTypes.dll contains a blocked executable reference to "cMD"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 INFO:Found Blocked EXE reference. File System.Windows.Forms.resources.dll contains a blocked executable reference to "CSi"
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:21 ERROR[Test]: Method name: "ExecuteSharedTests"
+	Error: DetectBlockedExes Task failed.
+	Comment: N/A

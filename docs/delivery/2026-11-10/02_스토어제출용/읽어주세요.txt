@@ -1,0 +1,9 @@
+﻿Partner Center의 패키지 항목에 올릴 파일입니다.
+
+Dohi.FileRenamerDohi_1.0.0.0_x64.msix
+
+Release / x64 / 1.0.0.0 / 자체 포함 .NET 및 WPF 런타임
+서명하지 않은 Store 제출용 원본입니다. 로컬 더블클릭 설치용이 아닙니다.
+Store 제출 시 별도 개인 키나 테스트 인증서를 올리지 않습니다.
+이 파일 자체의 업로드 검증과 Store 심사는 아직 진행하지 않았습니다.
+SHA256: 92469a0981f5481431fa3f5b624fb7ebedd308ffad8507cae298c78f7165a2c3

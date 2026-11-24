@@ -1,0 +1,13 @@
+﻿{
+    "CheckedAt":  "2026-11-10T01:52:23.0317141+09:00",
+    "PackageFile":  "Dohi.FileRenamerDohi_1.0.0.0_x64.msix",
+    "CertificateThumbprint":  "327E19267FB38AFEC6C203002C387A717450F541",
+    "SignedPackageSha256":  "D5B47D3D47D977C3C3CF5FE3933DF46E42CDC567B49FE23E4AA84D9E5182D1B3",
+    "ReleaseSha256":  "92469A0981F5481431FA3F5B624FB7EBEDD308FFAD8507CAE298C78F7165A2C3",
+    "OriginalPayloadEntriesVerified":  469,
+    "CryptographicSignature":  "Passed (without trust validation)",
+    "PrivateKeyRemoved":  true,
+    "Installation":  "Passed: installed package Status Ok and expected package family name",
+    "WindowsAppCertificationKit":  "Pending explicit permission to install system-wide certification kit",
+    "Cleanup":  "Not completed: administrator elevation was canceled; app and temporary certificate trust still present at 2026-11-10 07:40 KST"
+}

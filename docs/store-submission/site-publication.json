@@ -1,0 +1,12 @@
+{
+  "project_id": "appgprj_6afc8556e848819186361e3ee58b6f51",
+  "version_id": "appgprj_6afc8556e848819186361e3ee58b6f51~appgver_e0b442c74300819181e16167e2855182",
+  "deployment_id": "appgdep_6afcac01a1d48191a3b1fb1a9fd17904",
+  "commit_sha": "c5689982a1679c383982f10079f2f5a089da5a55",
+  "status": "succeeded",
+  "access_mode": "public",
+  "url": "https://file-renamer-dohi.poisedcarnation32.chatgpt.site",
+  "verified_on": "2026-11-18",
+  "anonymous_http": {"/privacy/": 200, "/support/": 200},
+  "browser_layout_verified": false
+}

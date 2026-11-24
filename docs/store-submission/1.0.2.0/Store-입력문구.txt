@@ -1,0 +1,49 @@
+File Renamer_Dohi · Microsoft Store 입력 자료
+작성: 2026-11-18
+
+[설명 / Description]
+File Renamer는 여러 파일의 이름을 한 번에 정리하는 Windows용 도구입니다. 찾아 바꾸기, 템플릿, 대소문자 변환, 순번 매기기를 지원하며 변경 전후 이름을 미리 확인할 수 있습니다. 중복 이름과 사용할 수 없는 문자를 검사하고, 마지막 이름 변경 작업을 한 번 되돌릴 수 있습니다. 날짜·회사명·이름을 조합하는 템플릿과 일반·다크 화면 모드를 제공합니다. 파일 확장자는 유지됩니다.
+
+[간단한 소개]
+변경 전후를 미리 확인하는 Windows 파일 이름 일괄 변경 도구
+
+[기능 / App features]
+찾아 바꾸기 및 선택적 정규식
+날짜·회사명·이름·원래 파일명을 조합하는 템플릿
+대소문자 변환과 순번 매기기
+이름 중복·사용할 수 없는 문자 검사
+마지막 이름 변경 작업 한 번 되돌리기
+일반·다크 화면 모드, 로컬 설정 저장
+파일 확장자 유지
+
+[스크린샷 캡션 — 파일명 순서대로]
+01-replace.png: 변경 전후를 비교하며 여러 파일의 공통 문구를 한 번에 바꿉니다.
+02-sequence.png: 기본 이름과 시작 번호, 자릿수, 구분자로 파일 이름을 정리합니다.
+03-template.png: 날짜와 원래 파일명을 조합하여 새 이름을 미리 확인합니다.
+04-conflict.png: 같은 폴더에서 이름이 중복되는 항목을 표시하고 적용을 막습니다.
+
+[지원 이메일]
+kmam147@gmail.com
+
+[개인정보 URL — 배포 상태는 링크-및-상태.txt에서 확인]
+https://file-renamer-dohi.poisedcarnation32.chatgpt.site/privacy/
+
+[지원 URL]
+https://file-renamer-dohi.poisedcarnation32.chatgpt.site/support/
+
+[웹사이트]
+https://file-renamer-dohi.poisedcarnation32.chatgpt.site/
+
+[카테고리 제안]
+Utilities & tools (유틸리티 및 도구) — 실제 화면의 선택지에서 확인
+
+[등록된 제품 정보 — 업로드 전 계정 화면과 대조]
+표시 이름: File Renamer_Dohi
+Name: Dohi.FileRenamerDohi
+Publisher: CN=E48A1617-7247-4DD8-BB45-93E40961D6D4
+PublisherDisplayName: Dohi
+Store ID: 9PF0VRZBLG81
+
+[소유자가 결정할 항목 — 아직 설정하지 않음]
+무료 또는 유료 / 배포 국가 / 심사 후 공개 시점
+연령 등급 질문은 실제 기능대로 응답하고 자동으로 전부 '아니오'를 선택하지 않습니다.

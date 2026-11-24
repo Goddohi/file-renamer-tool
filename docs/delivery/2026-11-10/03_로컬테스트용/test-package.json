@@ -1,0 +1,10 @@
+﻿{
+    "PackageName":  "Dohi.FileRenamerDohi",
+    "PackageFullName":  "Dohi.FileRenamerDohi_1.0.0.0_x64__0xzf0d7sark16",
+    "PackageFile":  "Dohi.FileRenamerDohi_1.0.0.0_x64.msix",
+    "PackageSha256":  "D5B47D3D47D977C3C3CF5FE3933DF46E42CDC567B49FE23E4AA84D9E5182D1B3",
+    "CertificateFile":  "FileRenamer-Test.cer",
+    "CertificateThumbprint":  "327E19267FB38AFEC6C203002C387A717450F541",
+    "Expires":  "2026-11-17T01:49:18.0000000+09:00",
+    "ReleaseSha256":  "92469A0981F5481431FA3F5B624FB7EBEDD308FFAD8507CAE298C78F7165A2C3"
+}

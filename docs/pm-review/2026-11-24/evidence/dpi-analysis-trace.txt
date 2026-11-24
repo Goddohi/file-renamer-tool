@@ -1,0 +1,19 @@
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Obtaining application list from the manifest :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\AppXManifest.xml
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Application installation directory :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Manifest filepath:C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\AppXManifest.xml
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:[GetDPIAwarenessApiCallingModules]
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Api user32.dll!SetThreadDpiAwarenessContext is called in the module :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\PresentationCore.dll
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Api user32.dll!SetThreadDpiAwarenessContext is called in the module :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\wpfgfx_cor3.dll
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Api user32.dll!SetThreadDpiAwarenessContext is called in the module :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\WindowsBase.dll
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Api user32.dll!SetProcessDpiAwarenessContext is called in the module :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Windows.Forms.Primitives.dll
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Api user32.dll!SetThreadDpiAwarenessContext is called in the module :C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\System.Windows.Forms.Primitives.dll
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:No number of DPI Aware API calls found in the Dependency Information XML:5
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:Binary filename:C:\Program Files\WindowsApps\Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16\FileRenamer.App.exe
+te.processhost.exe Error: 0 : 2026-11-13 오전 12:33:16 EXCEPTION[Infrastructure]: Infrastructure part name: "d:\os\src\sdktools\appcert\src\tests\DPIAwarenessValidation.cs", Method name: "IsDPIAwarePackage" Line: 174,
+	 Comment: N/A
+	 Exception message: COM 구성 요소 호출에서 HRESULT E_FAIL 오류가 반환되었습니다.
+	 Exception trace:    위치: Microsoft.Windows.SoftwareLogo.BinaryInfo.Interop.BinaryInfoClass.IsPerMonitorV2DPIAwarenessSet()
+   위치: Microsoft.Windows.SoftwareLogo.Tests.DPIAwarenessValidation.DPIAwarenessValidation.AppManifestContainsDPIAwarenesElement(String fileNamePath, BinaryInfoClass binaryInfo)
+   위치: Microsoft.Windows.SoftwareLogo.Tests.DPIAwarenessValidation.DPIAwarenessValidation.IsDPIAwarePackage(String manifestFilePath, TaskResult taskResult)
+te.processhost.exe Warning: 0 : 2026-11-13 오전 12:33:16 WARNING:Dohi.FileRenamerDohi_1.0.2.0_x64__0xzf0d7sark16 is not DPI Aware.
+te.processhost.exe Information: 0 : 2026-11-13 오전 12:33:16 INFO:DPIAwarenessValidation Result: WARNING

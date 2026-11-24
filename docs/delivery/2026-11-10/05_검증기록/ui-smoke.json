@@ -1,0 +1,18 @@
+﻿{
+    "CheckedAt":  "2026-11-10T02:05:26.2496200+09:00",
+    "Package":  "Dohi.FileRenamerDohi_1.0.0.0_x64__0xzf0d7sark16",
+    "InstalledIdentity":  "Passed",
+    "InstalledStatus":  "Ok",
+    "SignatureTrust":  "Valid",
+    "PackagedLaunch":  "Passed via AUMID",
+    "FilePicker":  "Passed with Korean paths",
+    "ReplaceAndUndo":  "Passed with on-disk names and contents checked",
+    "TemplatePreview":  "Passed",
+    "DuplicateNameBlocking":  "Passed; apply disabled",
+    "SequencePreview":  "Passed",
+    "CaseOnlyRenameAndUndo":  "Passed with extension and content preservation",
+    "ThemeAndInputPersistence":  "Passed after closing and relaunching",
+    "DragAndDrop":  "Not manually tested",
+    "Wack":  "Pending explicit permission to install the certification kit",
+    "Cleanup":  "Not completed: administrator elevation was canceled; app and temporary certificate trust still present at 2026-11-10 07:40 KST"
+}

@@ -1,0 +1,11 @@
+﻿Windows SDK 10.1.26100.9457 설치 프로그램
+Microsoft Corporation 서명 유효성 확인 완료 / 아직 실행·설치하지 않음
+
+출처:
+https://learn.microsoft.com/en-us/windows/apps/windows-sdk/downloads
+https://download.microsoft.com/download/46742ab5-6592-4968-a793-129e7f3bc55a/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe
+
+이 프로그램에서 Windows App Certification Kit 구성 요소를 선택하여 설치합니다.
+설치에는 관리자 권한이 필요합니다. 설치 후 원래 저장소의 packaging/Test-Wack.ps1을 실행합니다.
+자동 승인 검토는 앞선 앱·인증서 설치 승인에 별도 SDK 시스템 설치가 포함되지 않는다고 판단해 설치를 거절했습니다.
+이 파일을 보관한 것만으로 WACK 설치나 검사가 완료된 것은 아닙니다.

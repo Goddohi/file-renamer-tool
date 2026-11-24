@@ -4,7 +4,7 @@
 
 처음 출시한다면 [초보자용 배포 준비 가이드](STORE-PUBLISHING-GUIDE.ko.md)를 먼저 보세요. 지금 해야 할 일, Store 입력 순서, 소개문·심사 메모 초안, 다음 앱에 재사용할 점검표를 담았습니다.
 
-2026-11-18에 [그림과 실제 화면을 넣은 따라 하기 가이드](../output/store-submission/1.0.2.0/처음부터-따라하기.html), [복사용 Store 문구](../output/store-submission/1.0.2.0/Store-입력문구.txt), 스크린샷 PNG 4장을 준비했습니다. [개인정보 안내](https://file-renamer-dohi.poisedcarnation32.chatgpt.site/privacy/)와 [지원 페이지](https://file-renamer-dohi.poisedcarnation32.chatgpt.site/support/)도 공개 배포했습니다. 앱의 Store 제출·출시는 별도로 진행해야 합니다. 자료의 검증 범위와 남은 일은 [최신 상태](../output/store-submission/1.0.2.0/링크-및-상태.txt)에 있습니다.
+2026-11-18에 [그림과 실제 화면을 넣은 따라 하기 가이드](../docs/store-submission/1.0.2.0/처음부터-따라하기.html), [복사용 Store 문구](../docs/store-submission/1.0.2.0/Store-입력문구.txt), 스크린샷 PNG 4장을 준비했습니다. [개인정보 안내](https://file-renamer-dohi.poisedcarnation32.chatgpt.site/privacy/)와 [지원 페이지](https://file-renamer-dohi.poisedcarnation32.chatgpt.site/support/)도 공개 배포했습니다. 앱의 Store 제출·출시는 별도로 진행해야 합니다. 자료의 검증 범위와 남은 일은 [최신 상태](../docs/store-submission/1.0.2.0/링크-및-상태.txt)에 있습니다.
 
 2026-11-13 전체 WACK 검사는 완료됐으며 최종 판정은 **WARNING**입니다. 24개 중 22개 PASS, 선택 검사 FAIL 1개, DPI 분석기 WARNING 1개입니다. 아래 후속 기록에 원인과 실제 실행 검증을 남겼습니다. Store 업로드 및 심사 제출은 아직 진행하지 않았습니다.
 

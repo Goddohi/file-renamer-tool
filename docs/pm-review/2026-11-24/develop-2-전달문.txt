@@ -1,0 +1,19 @@
+[사용자 요청 전달 / 수신: develop-2 PM·관제]
+
+사용자가 develop-2를 PM·관제 세션으로 지정하고 File Renamer의 Store 검사 이슈 보고서를 전달해 처리하도록 요청했습니다.
+
+원본 프로젝트: C:/Users/최경태/orca/file-renamer-tool
+보고서: C:/Users/최경태/orca/file-renamer-tool/output/pm-review/2026-11-24/PM-검토요청-보고서.txt
+읽기용 HTML: C:/Users/최경태/orca/file-renamer-tool/output/pm-review/2026-11-24/PM-검토요청-보고서.html
+검사 증빙: C:/Users/최경태/orca/file-renamer-tool/output/pm-review/2026-11-24/evidence/
+전체 묶음: C:/Users/최경태/orca/file-renamer-tool/output/pm-review/File-Renamer-PM-Review-2026-11-24.zip
+
+핵심: 1.0.2.0 x64, 2026-11-13 전체 WACK 결과 WARNING. 24개 중 22 PASS, 필수 DPI WARNING 1개, 선택 차단된 실행 파일 FAIL 1개. Store 심사 탈락 결과가 아닙니다.
+
+FR-01: 설치 경로의 DPI 분석은 E_FAIL, 동일 해시 EXE를 일반 경로에 두면 분석 성공, 실제 창은 PerMonitorV2. 세부 원인은 미확정이며 배율별·다중 모니터 시각 검증이 남았습니다.
+FR-02: .NET/WPF 및 앱 호스트의 API/문자열 참조 검출. 실제 외부 프로세스 실행 의존성을 구분하여 확인하고, 통과 표시를 위해 런타임 DLL을 임의 삭제하지 마세요.
+FR-03: 임시 테스트 인증서는 2026-11-20 만료. 재설치·재검사 전에 테스트 서명을 준비하고 Store 제출용 원본은 보존해야 합니다.
+
+보고서를 읽고 개발·QA 작업 배정, 재현 조사, 필요한 수정, 최종 후보 재검사, 잔여 위험 검토를 관제해 주세요. 첫 회신에는 접수 여부와 담당·진행 순서·1차 조사 계획을 정리해 주세요. 완료 기준과 제출 보류/조건부 제출 조건은 보고서에 있습니다.
+
+이번 보고서 작성 세션은 신규 앱 수정·인증서 생성·WACK 재실행을 하지 않았습니다. 원본 프로젝트에는 기존 미커밋 변경이 있으니 보존하고 develop-2와 차이를 먼저 확인해 주세요. 최종 Store 제출·출시를 자동으로 승인한 요청은 아니므로 사용자 의사결정과 구분해 관리해 주세요.
