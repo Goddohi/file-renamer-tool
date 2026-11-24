@@ -4,3 +4,10 @@ publish/
 .vs/
 *.user
 .omc/state/
+.packages/
+artifacts/
+tmp/
+*.pfx
+*.p12
+output/
+sites/

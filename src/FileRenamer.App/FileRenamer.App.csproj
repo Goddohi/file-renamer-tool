@@ -8,6 +8,7 @@
     <RootNamespace>FileRenamer.App</RootNamespace>
     <AssemblyName>FileRenamer.App</AssemblyName>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
     <Product>File Renamer</Product>
     <AssemblyTitle>File Renamer</AssemblyTitle>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>

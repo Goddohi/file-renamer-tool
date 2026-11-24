@@ -1,0 +1,11 @@
+<Project DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">1.0.0.0</PackageVersion>
+    <PackageArchitecture Condition="'$(PackageArchitecture)' == ''">x64</PackageArchitecture>
+  </PropertyGroup>
+  <Target Name="Build">
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)Build-Msix.ps1&quot; -Configuration &quot;$(Configuration)&quot; -Version &quot;$(PackageVersion)&quot; -Architecture &quot;$(PackageArchitecture)&quot;"
+          StdOutEncoding="utf-8" StdErrEncoding="utf-8" />
+  </Target>
+</Project>

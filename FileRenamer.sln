@@ -13,6 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileRenamer.Core.Tests", "t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileRenamer.App", "src\FileRenamer.App\FileRenamer.App.csproj", "{FD3DA1DE-A3E4-47E6-B104-94DE173FDC21}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packaging", "packaging", "{371545AA-7B70-4505-A9C8-EB330DA64696}"
+	ProjectSection(SolutionItems) = preProject
+		packaging\FileRenamer.Package.proj = packaging\FileRenamer.Package.proj
+		packaging\Package.appxmanifest = packaging\Package.appxmanifest
+		packaging\Build-Msix.ps1 = packaging\Build-Msix.ps1
+		packaging\New-PackageAssets.ps1 = packaging\New-PackageAssets.ps1
+		packaging\New-TestPackage.ps1 = packaging\New-TestPackage.ps1
+		packaging\Install-TestPackage.ps1 = packaging\Install-TestPackage.ps1
+		packaging\Test-Wack.ps1 = packaging\Test-Wack.ps1
+		packaging\README.md = packaging\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
